@@ -25,10 +25,10 @@ class Card {
   // Метод для переворота карты
   flipCard = () => {
     if (this.isShowFace) {
-      this.animateCardFlip(false, 'card-answer')
+      this.animateCardFlip(false, 'card-back')
       this.showText(false)
     } else {
-      this.animateCardFlip(true, 'card-answer')
+      this.animateCardFlip(true, 'card-back')
       this.showText(true)
     }
 

@@ -72,16 +72,18 @@ img {
 
 .card {
   margin: auto;
-  background: gray;
   height: 400px;
   width: 200px;
   border: 1px solid black;
   transform-origin: center;
-  /*transition: transform .5s;*/
 }
 
-.card-answer {
-  background: green;
+.card-front {
+  background: darkblue;
+}
+
+.card-back {
+  background: darkgreen;
 }
 
 .card:hover {
