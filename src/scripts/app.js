@@ -1,9 +1,25 @@
-const DATA_CARDS = [
-  {
-    question: `вопрос: `,
-    answer: `ответ: `,
-  }
-]
+import {DATA_CARDS} from './modules/data.js'
+import CardModel from './components/model/CardModel.js'
+import DeckModel from './components/model/DeckModel.js'
+import CardView from './components/view/CardView.js'
+import DeckView from './components/view/DeckView.js'
+import CardController from './components/controller/CardController.js'
+import GameController from './components/controller/GameController.js'
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cardModel = new CardModel('Question', 'Answer');
+  const deckModel = new DeckModel();
+  deckModel.addCard(cardModel);
+
+  const cardView = new CardView(cardModel);
+  const deckView = new DeckView(deckModel);
+  deckView.cardViews.push(cardView);
+
+  const gameController = new GameController(deckModel, deckView);
+  gameController.startGame();
+})
+
+
 
 class Card {
   constructor() {
@@ -66,4 +82,4 @@ class Card {
   }
 }
 
-new Card()
+// new Card()
